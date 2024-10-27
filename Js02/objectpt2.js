@@ -63,7 +63,8 @@ const course = {
 
 // course.courseInstructor
 
-const {courseInstructor: instructor} = course
+const {courseInstructor: instructor} = course // this is know as destructuring in js
+// it is a way to reduce the usage of dot operator everytime to access the object element
 
 // console.log(courseInstructor);
 console.log(instructor);
