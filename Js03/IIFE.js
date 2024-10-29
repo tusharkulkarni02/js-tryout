@@ -1,4 +1,7 @@
+
+
 // IMMEDIATELY INVOKED FUNCTION EXPRESSION
+
 /*  a) These are the functions which are immediately invoked in a program wihtout the need of separate function call.
     b) They are generally implemented to avoid pollution from global scope.
     c) They create their own private scope.
