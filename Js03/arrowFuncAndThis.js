@@ -33,16 +33,22 @@ const user = {
 //  So doing this.username will result in undefined.
 const chai =  () => {
     let username = "hitesh"
-    console.log(this); 
+    console.log(this);  // same as normal function, this in arrow function doesnot give the address of the current arrow function
+    // this contains the global scope
 }
 
 
 // chai()
 
+// NOTE: EXPLICIT RETURN
+
 // Note: When using arrow function with curly braces, it is important to use return keyword to return something. 
 // const addTwo = (num1, num2) => { 
 //     return num1 + num2
 // }
+
+
+// NOTE: IMPLICIT RETURN
 
 // const addTwo = (num1, num2) =>  num1 + num2  // in short hand method return keyword is not used
 
