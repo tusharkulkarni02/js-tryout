@@ -25,7 +25,8 @@ const user = {
 
 // const chai = function () {
 //     let username = "hitesh"
-//     console.log(this.username);
+//     console.log(this.username); // usage of this in a function is not the same as object
+        // in object this points to the memory location of the object , in function this points to global scope
 // }
 
 // NOTE : Arrow function doesnt get its own this , it inherits this from outer scope.

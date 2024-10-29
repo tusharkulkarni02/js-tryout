@@ -41,6 +41,7 @@ if (true) {
 // console.log(username);
 
 /* NOTE : The scope of a variable inside a browser is different as compared to the scope of a variable in node environment
+            in browser this points to a global window object and in node environment this points to empty object.
     i.e core scope 
 */
 
