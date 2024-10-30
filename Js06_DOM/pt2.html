@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <!-- this is a comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    /* NOTE: In this js file we are exploring the parend child relationships in html document 
+        through DOM manipulation
+    
+    1. Here we are selection the div having className as parent
+        we have created a parent variable which stores the Node returned by the documen.querySelector('.parent')
+        parent.children -> gives the childrens present under the Node parent.
+    */
+
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children); // prints the HTMLCOllection consisting the childrens of the parent.
+    console.log(parent.children[1].innerHTML); // prints the innerHTML to the console.
+
+    for (let i = 0; i < parent.children.length; i++) {
+         console.log(parent.children[i].innerHTML); // looping over the individual html list element which are children of the className parent.
+        // prints the innerHTML of all the childrens.
+    }
+    parent.children[1].style.color = "orange"
+    console.log(parent.firstElementChild); // getting the first element child of the parent
+    console.log(parent.lastElementChild); 
+
+    const dayOne = document.querySelector('.day') // using querySelector of class 'day' , which stores the first class = 'day' in dayOne.
+    console.log(dayOne); // printing the node
+    console.log(dayOne.parentElement); // priting the parent element of the dayOne 
+    console.log(dayOne.nextElementSibling); // printing the next element of the dayOne.
+
+    console.log("NODES: ", parent.childNodes); // printing the childNodes of the parent
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    /* NOTE:
+            Here , we are exploring different ways to add/edit the text to the document.
+    */
+
+    // 1. first createElement then add the language using .innerHTML 
+    // appeding the created element using .querySelector('element').appendChild()
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python") // calling the function 
+    addLanguage("typescript")
+
+    /*2. More Optimised Way -> a) createElement
+                               b) createTextNode(langName)
+                               c) appendChild -> append the created node
+                               d) append the element to the document.
+    */
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+
+
+    //Edit
+    /* 1. select the nth-child which you want to edit using querySelector.
+          We can edit the HTML either by using , a) secondLang.innerHTML = "MOJO"
+                                                 b) create new elememt -> add textContent with newli.textContent = "Mojo"
+                                                    -> with .replaceWith(newli) method we can replace the text.
+    */
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    //secondLang.innerHTML = "Mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)
+
+    //edit
+    /* 2. Another way is manipulation with .outerHTML 
+            here we have to give all the html by which we want to replace.
+    */
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    //remove
+    // to remove simply us .remove()
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
+
+</script>
+</html>
